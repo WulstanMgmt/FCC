@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 16.0 (Homebrew)
--- Dumped by pg_dump version 16.0 (Homebrew)
+-- Dumped from database version 12.9 (Ubuntu 12.9-2.pgdg20.04+1)
+-- Dumped by pg_dump version 12.9 (Ubuntu 12.9-2.pgdg20.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -21,7 +21,7 @@ DROP DATABASE salon;
 -- Name: salon; Type: DATABASE; Schema: -; Owner: freecodecamp
 --
 
-CREATE DATABASE salon WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'C';
+CREATE DATABASE salon WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'C.UTF-8' LC_CTYPE = 'C.UTF-8';
 
 
 ALTER DATABASE salon OWNER TO freecodecamp;
@@ -70,7 +70,7 @@ CREATE SEQUENCE public.appointments_appointment_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.appointments_appointment_id_seq OWNER TO freecodecamp;
+ALTER TABLE public.appointments_appointment_id_seq OWNER TO freecodecamp;
 
 --
 -- Name: appointments_appointment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
@@ -105,7 +105,7 @@ CREATE SEQUENCE public.customers_customer_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.customers_customer_id_seq OWNER TO freecodecamp;
+ALTER TABLE public.customers_customer_id_seq OWNER TO freecodecamp;
 
 --
 -- Name: customers_customer_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
@@ -139,7 +139,7 @@ CREATE SEQUENCE public.services_service_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.services_service_id_seq OWNER TO freecodecamp;
+ALTER TABLE public.services_service_id_seq OWNER TO freecodecamp;
 
 --
 -- Name: services_service_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
@@ -173,15 +173,12 @@ ALTER TABLE ONLY public.services ALTER COLUMN service_id SET DEFAULT nextval('pu
 -- Data for Name: appointments; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.appointments VALUES (1, 1, 3, '6:00');
-INSERT INTO public.appointments VALUES (2, 1, 1, '10:00');
 
 
 --
 -- Data for Name: customers; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.customers VALUES (1, 'Raul', '555-5555');
 
 
 --
@@ -199,21 +196,21 @@ INSERT INTO public.services VALUES (5, 'HappyEnding');
 -- Name: appointments_appointment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.appointments_appointment_id_seq', 2, true);
+SELECT pg_catalog.setval('public.appointments_appointment_id_seq', 8, true);
 
 
 --
 -- Name: customers_customer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.customers_customer_id_seq', 1, true);
+SELECT pg_catalog.setval('public.customers_customer_id_seq', 6, true);
 
 
 --
 -- Name: services_service_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.services_service_id_seq', 5, true);
+SELECT pg_catalog.setval('public.services_service_id_seq', 1, false);
 
 
 --
@@ -267,4 +264,3 @@ ALTER TABLE ONLY public.appointments
 --
 -- PostgreSQL database dump complete
 --
-

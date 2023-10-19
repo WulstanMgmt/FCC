@@ -16,34 +16,24 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-\connect postgres
-
-DROP DATABASE IF EXISTS periodic_table;
 --
--- Name: periodic_table; Type: DATABASE; Schema: -; Owner: freecodecamp
+-- Name: elements; Type: TABLE; Schema: public; Owner: freecodecamp
 --
 
-CREATE DATABASE periodic_table WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'C.UTF-8' LC_CTYPE = 'C.UTF-8';
+DROP TABLE IF EXISTS public.elements CASCADE;
+
+--
+-- Name: properties; Type: TABLE; Schema: public; Owner: freecodecamp
+--
+
+DROP TABLE IF EXISTS public.properties CASCADE;
+
+--
+-- Name: types; Type: TABLE; Schema: public; Owner: freecodecamp
+--
 
 
-ALTER DATABASE periodic_table OWNER TO freecodecamp;
-
-\connect periodic_table
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
-SET default_tablespace = '';
-
-SET default_table_access_method = heap;
+DROP TABLE IF EXISTS public.types CASCADE;
 
 --
 -- Name: elements; Type: TABLE; Schema: public; Owner: freecodecamp

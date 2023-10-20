@@ -31,3 +31,4 @@ OUTPUT="The element with atomic number $ATOMIC_NUMBER, is $ELEMENT_NAME ($(echo 
 #make it pretty by removing double blank spaces piping it through 'tr' method
 echo  $OUTPUT | tr -s '[:blank:]'
 exit
+\n

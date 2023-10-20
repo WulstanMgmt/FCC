@@ -27,7 +27,7 @@ ATOMIC_MASS=$($PSQL "SELECT atomic_mass FROM properties WHERE atomic_number=$ATO
 MP=$($PSQL "SELECT melting_point_celsius FROM properties WHERE atomic_number=$ATOMIC_NUMBER")
 BP=$($PSQL "SELECT boiling_point_celsius FROM properties WHERE atomic_number=$ATOMIC_NUMBER")
 #create new var with the sentence that will be returned with the env var embedded
-OUTPUT="The element with atomic number $ATOMIC_NUMBER, is $ELEMENT_NAME ($(echo $ELEMENT_SYMBOL || sed 's/[[:blank:]]//g')). It's a $TYPE, with a mass of $ATOMIC_MASS amu. $ELEMENT_NAME has a melting point of $MP celsius and a boiling point of $BP celsius."
+OUTPUT="The element with atomic number $ATOMIC_NUMBER is $ELEMENT_NAME ($(echo $ELEMENT_SYMBOL || sed 's/[[:blank:]]//g')). It's a $TYPE, with a mass of $ATOMIC_MASS amu. $ELEMENT_NAME has a melting point of $MP celsius and a boiling point of $BP celsius."
 #make it pretty by removing double blank spaces piping it through 'tr' method
 echo  $OUTPUT | tr -s '[:blank:]'
 exit

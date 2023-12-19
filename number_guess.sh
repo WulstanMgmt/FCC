@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 #
 PSQL="psql --username=home --dbname=number_guess -c"
 #
